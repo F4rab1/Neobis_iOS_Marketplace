@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         let tf = UITextField()
         tf.borderStyle = .none
         tf.backgroundColor = .clear
+        tf.isSecureTextEntry = true
         
         let lineView = UIView()
         lineView.backgroundColor = UIColor(hexString: "#C7C7C8")
@@ -61,6 +62,13 @@ class LoginViewController: UIViewController {
         lineView.trailingAnchor.constraint(equalTo: tf.trailingAnchor).isActive = true
         lineView.bottomAnchor.constraint(equalTo: tf.bottomAnchor).isActive = true
         lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "eye-disable"), for: .normal)
+        button.setImage(UIImage(named: "eye"), for: .selected)
+        button.addTarget(self, action: #selector(changePasswordVisibility), for: .touchUpInside)
+        tf.rightView = button
+        tf.rightViewMode = .always
         
         tf.placeholder = "Пароль"
         tf.delegate = tf
@@ -116,6 +124,11 @@ class LoginViewController: UIViewController {
         let vc = RegistrationViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Sign Up")
+    }
+    
+    @objc func changePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
     }
     
     func setupConstraints() {
