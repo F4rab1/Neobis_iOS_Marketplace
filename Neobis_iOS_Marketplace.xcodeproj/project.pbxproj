@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		56CFA3B63189E3FF6E28D674 /* Pods_Neobis_iOS_Marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */; };
+		D305E6592A38B3DC00D2866E /* UIcolor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */; };
+		D305E65B2A38FCD500D2866E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E65A2A38FCD500D2866E /* ProfileViewController.swift */; };
+		D305E65D2A38FDB400D2866E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */; };
 		D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */; };
 		D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */; };
 		D3806C8B2A373F8E00E2ACE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3806C8A2A373F8E00E2ACE8 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 		2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_Marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.release.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.release.xcconfig"; sourceTree = "<group>"; };
+		D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extensions.swift"; sourceTree = "<group>"; };
+		D305E65A2A38FCD500D2866E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		D3806C7E2A373F8C00E2ACE8 /* Neobis_iOS_Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,8 +60,15 @@
 				791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */,
 				A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D305E6572A38B39A00D2866E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D3806C752A373F8C00E2ACE8 = {
@@ -82,6 +95,7 @@
 				D3806C952A387A3A00E2ACE8 /* Models */,
 				D3806C962A387A4300E2ACE8 /* Views */,
 				D3806C972A387A4F00E2ACE8 /* ViewModels */,
+				D305E6572A38B39A00D2866E /* Extensions */,
 				D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */,
 				D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */,
 				D3806C8A2A373F8E00E2ACE8 /* Assets.xcassets */,
@@ -102,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */,
+				D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */,
+				D305E65A2A38FCD500D2866E /* ProfileViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,9 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D305E65D2A38FDB400D2866E /* RegistrationViewController.swift in Sources */,
 				D3806C9E2A38A4CA00E2ACE8 /* LoginViewController.swift in Sources */,
 				D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */,
+				D305E65B2A38FCD500D2866E /* ProfileViewController.swift in Sources */,
 				D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */,
+				D305E6592A38B3DC00D2866E /* UIcolor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
