@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56CFA3B63189E3FF6E28D674 /* Pods_Neobis_iOS_Marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */; };
 		D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */; };
 		D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */; };
-		D3806C862A373F8C00E2ACE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C852A373F8C00E2ACE8 /* ViewController.swift */; };
-		D3806C892A373F8C00E2ACE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3806C872A373F8C00E2ACE8 /* Main.storyboard */; };
 		D3806C8B2A373F8E00E2ACE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3806C8A2A373F8E00E2ACE8 /* Assets.xcassets */; };
 		D3806C8E2A373F8E00E2ACE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3806C8C2A373F8E00E2ACE8 /* LaunchScreen.storyboard */; };
+		D3806C9E2A38A4CA00E2ACE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_Marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
+		A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.release.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.release.xcconfig"; sourceTree = "<group>"; };
 		D3806C7E2A373F8C00E2ACE8 /* Neobis_iOS_Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neobis_iOS_Marketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3806C852A373F8C00E2ACE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D3806C882A373F8C00E2ACE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3806C8A2A373F8E00E2ACE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3806C8D2A373F8E00E2ACE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3806C8F2A373F8E00E2ACE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CFA3B63189E3FF6E28D674 /* Pods_Neobis_iOS_Marketplace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41AFE7707BEDAFEC20A95DA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6948F157DF66E1818D4BBD73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */,
+				A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3806C752A373F8C00E2ACE8 = {
 			isa = PBXGroup;
 			children = (
 				D3806C802A373F8C00E2ACE8 /* Neobis_iOS_Marketplace */,
 				D3806C7F2A373F8C00E2ACE8 /* Products */,
+				6948F157DF66E1818D4BBD73 /* Pods */,
+				41AFE7707BEDAFEC20A95DA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +79,38 @@
 		D3806C802A373F8C00E2ACE8 /* Neobis_iOS_Marketplace */ = {
 			isa = PBXGroup;
 			children = (
+				D3806C952A387A3A00E2ACE8 /* Models */,
+				D3806C962A387A4300E2ACE8 /* Views */,
+				D3806C972A387A4F00E2ACE8 /* ViewModels */,
 				D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */,
 				D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */,
-				D3806C852A373F8C00E2ACE8 /* ViewController.swift */,
-				D3806C872A373F8C00E2ACE8 /* Main.storyboard */,
 				D3806C8A2A373F8E00E2ACE8 /* Assets.xcassets */,
 				D3806C8C2A373F8E00E2ACE8 /* LaunchScreen.storyboard */,
 				D3806C8F2A373F8E00E2ACE8 /* Info.plist */,
 			);
 			path = Neobis_iOS_Marketplace;
+			sourceTree = "<group>";
+		};
+		D3806C952A387A3A00E2ACE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3806C962A387A4300E2ACE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D3806C972A387A4F00E2ACE8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3806C922A373F8E00E2ACE8 /* Build configuration list for PBXNativeTarget "Neobis_iOS_Marketplace" */;
 			buildPhases = (
+				C14C4F1ADAAF187996652B2A /* [CP] Check Pods Manifest.lock */,
 				D3806C7A2A373F8C00E2ACE8 /* Sources */,
 				D3806C7B2A373F8C00E2ACE8 /* Frameworks */,
 				D3806C7C2A373F8C00E2ACE8 /* Resources */,
+				B2081FDDE5BE66AE594BA1E8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +175,59 @@
 			files = (
 				D3806C8E2A373F8E00E2ACE8 /* LaunchScreen.storyboard in Resources */,
 				D3806C8B2A373F8E00E2ACE8 /* Assets.xcassets in Resources */,
-				D3806C892A373F8C00E2ACE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2081FDDE5BE66AE594BA1E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C14C4F1ADAAF187996652B2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Neobis_iOS_Marketplace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3806C7A2A373F8C00E2ACE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3806C862A373F8C00E2ACE8 /* ViewController.swift in Sources */,
+				D3806C9E2A38A4CA00E2ACE8 /* LoginViewController.swift in Sources */,
 				D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */,
 				D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +236,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D3806C872A373F8C00E2ACE8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3806C882A373F8C00E2ACE8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D3806C8C2A373F8E00E2ACE8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +363,7 @@
 		};
 		D3806C932A373F8E00E2ACE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -291,7 +373,6 @@
 				INFOPLIST_FILE = Neobis_iOS_Marketplace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,6 +390,7 @@
 		};
 		D3806C942A373F8E00E2ACE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -318,7 +400,6 @@
 				INFOPLIST_FILE = Neobis_iOS_Marketplace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
