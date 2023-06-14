@@ -113,9 +113,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func signInPressed() {
-//        let vc = HomeViewController()
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
         print("Sign In")
     }
     

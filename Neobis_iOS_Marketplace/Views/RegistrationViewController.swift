@@ -51,8 +51,9 @@ class RegistrationViewController: UIViewController {
         let tf = UITextField()
         tf.borderStyle = .none
         tf.backgroundColor = .clear
-        tf.isSecureTextEntry = true
         tf.placeholder = "Почта"
+        tf.autocapitalizationType = .none
+        tf.autocorrectionType = .no
         tf.delegate = tf
         
         let lineView = UIView()
