@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
         tf.backgroundColor = .clear
         tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
+        tf.placeholder = "Имя пользователя"
+        tf.delegate = tf
         
         let lineView = UIView()
         lineView.backgroundColor = UIColor(hexString: "#C7C7C8")
@@ -42,9 +44,6 @@ class LoginViewController: UIViewController {
         lineView.trailingAnchor.constraint(equalTo: tf.trailingAnchor).isActive = true
         lineView.bottomAnchor.constraint(equalTo: tf.bottomAnchor).isActive = true
         lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        
-        tf.placeholder = "Имя пользователя"
-        tf.delegate = tf
         return tf
     }()
     
