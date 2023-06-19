@@ -95,6 +95,16 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    private let example: UIButton = {
+        let button = UIButton()
+        button.setTitle("Example", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(UIColor(hexString: "#5458EA"), for: .normal)
+        button.addTarget(self, action: #selector(examplePressed), for: .touchUpInside)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,6 +120,7 @@ class LoginViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
+        view.addSubview(example)
     }
     
     @objc private func signInPressed() {
@@ -122,6 +133,11 @@ class LoginViewController: UIViewController {
         let vc = RegistrationViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Sign Up")
+    }
+    
+    @objc private func examplePressed() {
+        AuthService.shared.registerUser()
+        print("example")
     }
     
     @objc func changePasswordVisibility(_ sender: UIButton) {
@@ -152,6 +168,12 @@ class LoginViewController: UIViewController {
             make.top.equalTo(usernameTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 50)
             make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
             make.height.equalTo(35)
+        }
+        
+        example.snp.makeConstraints { make in
+            make.bottom.equalTo(signUpButton.snp.top).offset((UIScreen.main.bounds.height / 812) * -100)
+            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.height.equalTo(44)
         }
         
         signInButton.snp.makeConstraints { make in

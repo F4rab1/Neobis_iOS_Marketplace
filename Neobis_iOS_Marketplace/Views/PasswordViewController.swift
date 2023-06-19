@@ -43,15 +43,17 @@ class PasswordViewController: UIViewController {
         tf.font = UIFont.systemFont(ofSize: 24)
         tf.textAlignment = .center
         tf.delegate = tf
-        
-        let lineView = UIView()
-        lineView.backgroundColor = UIColor(hexString: "#C7C7C8")
-        lineView.translatesAutoresizingMaskIntoConstraints = false
-        tf.addSubview(lineView)
-        lineView.leadingAnchor.constraint(equalTo: tf.leadingAnchor).isActive = true
-        lineView.trailingAnchor.constraint(equalTo: tf.trailingAnchor).isActive = true
-        lineView.bottomAnchor.constraint(equalTo: tf.bottomAnchor).isActive = true
-        lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        return tf
+    }()
+    
+    private let secondPasswordTextField: UITextField = {
+        let tf = UITextField()
+        tf.borderStyle = .none
+        tf.backgroundColor = .clear
+        tf.isSecureTextEntry = true
+        tf.font = UIFont.systemFont(ofSize: 24)
+        tf.textAlignment = .center
+        tf.delegate = tf
         return tf
     }()
     
@@ -64,26 +66,6 @@ class PasswordViewController: UIViewController {
         button.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         return button
-    }()
-    
-    private let secondPasswordTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.backgroundColor = .clear
-        tf.isSecureTextEntry = true
-        tf.font = UIFont.systemFont(ofSize: 24)
-        tf.textAlignment = .center
-        tf.delegate = tf
-        
-        let lineView = UIView()
-        lineView.backgroundColor = UIColor(hexString: "#C7C7C8")
-        lineView.translatesAutoresizingMaskIntoConstraints = false
-        tf.addSubview(lineView)
-        lineView.leadingAnchor.constraint(equalTo: tf.leadingAnchor).isActive = true
-        lineView.trailingAnchor.constraint(equalTo: tf.trailingAnchor).isActive = true
-        lineView.bottomAnchor.constraint(equalTo: tf.bottomAnchor).isActive = true
-        lineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
-        return tf
     }()
 
     override func viewDidLoad() {
