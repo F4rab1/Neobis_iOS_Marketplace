@@ -5,9 +5,40 @@
 //  Created by Фараби Иса on 14.06.2023.
 //
 
+import Foundation
 import UIKit
+import SnapKit
 
 class PasswordViewController: UIViewController {
+    
+    var username: String?
+    var email: String?
+    var registrationViewModel: RegistrationViewModelProtocol!
+    
+    init(userViewModel: RegistrationViewModelProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        self.registrationViewModel = userViewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let minLengthLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.text = "Минимальная длина — 8 символов."
+        label.isHidden = true
+        return label
+    }()
+    
+    private let notEqualLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.text = "Пароли не совпадают."
+        label.isHidden = true
+        return label
+    }()
     
     private let lockImageView: UIImageView = {
         let iv = UIImageView()
@@ -100,6 +131,8 @@ class PasswordViewController: UIViewController {
         view.addSubview(passwordTextField)
         view.addSubview(secondPasswordTextField)
         view.addSubview(signUpButton)
+        view.addSubview(minLengthLabel)
+        view.addSubview(notEqualLabel)
     }
     
     @objc func backPressed() {
@@ -113,9 +146,25 @@ class PasswordViewController: UIViewController {
     }
     
     @objc private func signUpPressed() {
-        let vc = ProfileViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        print("Sign Up")
+        if passwordTextField.text!.count < 8 {
+            notEqualLabel.isHidden = true
+            minLengthLabel.isHidden = false
+            return
+        } else if secondPasswordTextField.text! != passwordTextField.text! {
+            minLengthLabel.isHidden = true
+            notEqualLabel.isHidden = false
+        } else {
+            minLengthLabel.isHidden = true
+            notEqualLabel.isHidden = true
+            
+            registrationViewModel.registerUser(username: username!,
+                                               email: email!,
+                                               password: passwordTextField.text!,
+                                               confirmPassword: secondPasswordTextField.text!)
+            let vc = ProfileViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            print("Sign Up > Next")
+        }
     }
     
     func setupConstraints() {
@@ -152,6 +201,16 @@ class PasswordViewController: UIViewController {
             make.top.equalTo(secondPasswordTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 40)
             make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
             make.height.equalTo(44)
+        }
+        
+        minLengthLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(secondPasswordTextField.snp.bottom).offset(10)
+        }
+        
+        notEqualLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(secondPasswordTextField.snp.bottom).offset(10)
         }
     }
 }

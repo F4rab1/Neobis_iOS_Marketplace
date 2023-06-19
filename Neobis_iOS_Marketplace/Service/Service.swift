@@ -9,43 +9,42 @@ import Foundation
 
 class AuthService {
     static let shared = AuthService()
-    private let baseURL = URL(string: "http://35.234.124.146/auth/register/")!
-
-    func registerUser() {
-        var request = URLRequest(url: baseURL)
+    private let baseURL = "http://35.234.124.146/auth/"
+    
+    func registerUser(with registerRequest: Register, completion: @escaping (Result<Register, Error>) -> Void) {
+        let urlString = "\(baseURL)register/"
+        guard let url = URL(string: urlString) else { return }
         
-        let registerData = Register(username: "example2",
-                                    email: "viton60455@anwarb.com",
-                                    password: "farabi2004",
-                                    password2: "farabi2004")
-        
-        guard let jsonData = try? JSONEncoder().encode(registerData) else {
+        guard let jsonData = try? JSONEncoder().encode(registerRequest) else {
             print("Failed to encode register data.")
+            completion(.failure(NSError(domain: "AuthService", code: 0, userInfo: nil)))
             return
         }
         
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = jsonData
-            
+        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print(error)
+                completion(.failure(error))
                 return
             }
             
             guard let data = data else {
-                print("data error")
+                print("Data error")
+                completion(.failure(NSError(domain: "AuthService", code: 0, userInfo: nil)))
                 return
             }
-        
+            
             let decoder = JSONDecoder()
             do {
                 let user = try decoder.decode(Register.self, from: data)
-                print(user)
+                completion(.success(user))
             } catch {
-                let error = NSError(domain: "AuthService", code: 0, userInfo: nil)
-                print(error)
+                completion(.failure(error))
             }
         }.resume()
     }

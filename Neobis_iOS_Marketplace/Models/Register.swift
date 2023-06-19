@@ -10,6 +10,11 @@ import Foundation
 struct Register: Codable {
     let username: String
     let email: String
-    let password: String
-    let password2: String
+    var password: String?
+    var password2: String?
+}
+
+struct RegisterResponse: Codable {
+    var username: [String]?
+    var email: [String]?
 }

@@ -78,6 +78,13 @@ class RegistrationViewController: UIViewController {
         return button
     }()
     
+    private let redLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.red
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,7 +111,38 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc private func signUpPressed() {
-        let vc = PasswordViewController()
+        if usernameTextField.text!.isEmpty {
+            usernameTextField.addSubview(redLine)
+            redLine.leadingAnchor.constraint(equalTo: usernameTextField.leadingAnchor).isActive = true
+            redLine.trailingAnchor.constraint(equalTo: usernameTextField.trailingAnchor).isActive = true
+            redLine.bottomAnchor.constraint(equalTo: usernameTextField.bottomAnchor).isActive = true
+            redLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            return
+        } else if emailTextField.text!.isEmpty {
+            emailTextField.addSubview(redLine)
+            redLine.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor).isActive = true
+            redLine.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor).isActive = true
+            redLine.bottomAnchor.constraint(equalTo: emailTextField.bottomAnchor).isActive = true
+            redLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
+            return
+        } else {
+            usernameTextField.subviews.forEach { subview in
+                if subview.backgroundColor == UIColor.red {
+                    subview.removeFromSuperview()
+                }
+            }
+            
+            emailTextField.subviews.forEach { subview in
+                if subview.backgroundColor == UIColor.red {
+                    subview.removeFromSuperview()
+                }
+            }
+        }
+        
+        let registrationViewModel = RegistrationViewModel()
+        let vc = PasswordViewController(userViewModel: registrationViewModel)
+        vc.username = usernameTextField.text
+        vc.email = emailTextField.text
         navigationController?.pushViewController(vc, animated: true)
         print("Sign Up > password")
     }
