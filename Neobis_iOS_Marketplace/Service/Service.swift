@@ -48,4 +48,42 @@ class AuthService {
             }
         }.resume()
     }
+    
+    func login(with loginRequest: Login, completion: @escaping (Result<Login, Error>) -> Void) {
+        let urlString = "\(baseURL)login/"
+        guard let url = URL(string: urlString) else { return }
+        
+        guard let jsonData = try? JSONEncoder().encode(loginRequest) else {
+            print("Failed to encode register data.")
+            completion(.failure(NSError(domain: "AuthService", code: 0, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+                completion(.failure(error))
+                return
+            }
+            
+            guard let data = data else {
+                print("Data error")
+                completion(.failure(NSError(domain: "AuthService", code: 0, userInfo: nil)))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                let user = try decoder.decode(Login.self, from: data)
+                completion(.success(user))
+            } catch {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }

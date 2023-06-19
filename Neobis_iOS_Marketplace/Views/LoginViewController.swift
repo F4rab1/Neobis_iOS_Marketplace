@@ -148,6 +148,9 @@ class LoginViewController: UIViewController {
             }
         }
         
+        let loginViewModel = LoginViewModel()
+        loginViewModel.login(username: usernameTextField.text!, password: passwordTextField.text!)
+        
         let vc = ProfileViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Sign In")
