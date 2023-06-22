@@ -9,7 +9,7 @@ import Foundation
 
 class AuthService {
     static let shared = AuthService()
-    private let baseURL = "http://35.234.124.146/auth/"
+    private let baseURL = "http://159.223.28.95/auth/"
     
     func registerUser(with registerRequest: Register, completion: @escaping (Result<Register, Error>) -> Void) {
         let urlString = "\(baseURL)register/"

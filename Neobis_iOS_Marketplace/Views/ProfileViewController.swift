@@ -11,15 +11,22 @@ import SnapKit
 
 class ProfileViewController: UIViewController {
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = "Profile view"
-        return label
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Профиль"
+        
+        let changeProfileButton: UIButton = {
+            let button = UIButton(type: .custom)
+            button.setImage(UIImage(named: "changeButton"), for: .normal)
+            button.addTarget(self, action: #selector(changeProfilePressed), for: .touchUpInside)
+            return button
+        }()
+        
+        let detailBarButtonItem = UIBarButtonItem(customView: changeProfileButton)
+        
+        self.navigationItem.hidesBackButton = true
+        self.navigationItem.rightBarButtonItem = detailBarButtonItem
         
         setupViews()
         setupConstraints()
@@ -27,12 +34,14 @@ class ProfileViewController: UIViewController {
     
     func setupViews() {
         view.backgroundColor = .white
-        view.addSubview(titleLabel)
+    }
+    
+    @objc private func changeProfilePressed() {
+        let vc = ProfileDetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupConstraints() {
-        titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
+        
     }
 }
