@@ -157,7 +157,8 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func signUpPressed() {
-        let vc = RegistrationViewController()
+        let vm = RegistrationViewModel()
+        let vc = RegistrationViewController(viewModel: vm)
         navigationController?.pushViewController(vc, animated: true)
         print("Sign Up")
     }
@@ -182,7 +183,7 @@ class LoginViewController: UIViewController {
         
         usernameTextField.snp.makeConstraints { make in
             make.top.equalTo(logoTitleLabel.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 120)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(35)
         }
         
@@ -246,4 +247,12 @@ extension UITextField: UITextFieldDelegate {
             placeholderLabel.alpha = 1
         }
     }
+}
+
+
+extension NSObject {
+    public func computedWidth(_ value: Float) -> Float {
+        Float((UIScreen.main.bounds.width / 375)) * value
+    }
+//    public func computedHeight(_ value: Float)
 }
