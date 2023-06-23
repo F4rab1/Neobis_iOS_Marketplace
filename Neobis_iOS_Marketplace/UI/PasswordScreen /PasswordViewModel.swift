@@ -1,17 +1,17 @@
 //
-//  RegistrationViewModel.swift
+//  PasswordViewModel.swift
 //  Neobis_iOS_Marketplace
 //
-//  Created by Фараби Иса on 19.06.2023.
+//  Created by Фараби Иса on 24.06.2023.
 //
 
 import Foundation
 
-protocol RegistrationViewModelProtocol {
+protocol PasswordViewModelProtocol {
     func registerUser(username: String, email: String, password: String, confirmPassword: String)
 }
 
-class RegistrationViewModel: RegistrationViewModelProtocol {
+class PasswordViewModel: PasswordViewModelProtocol {
     func registerUser(username: String, email: String, password: String, confirmPassword: String) {
         let authService = AuthService.shared
         

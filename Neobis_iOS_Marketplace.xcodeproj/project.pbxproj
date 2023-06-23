@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56CFA3B63189E3FF6E28D674 /* Pods_Neobis_iOS_Marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */; };
-		D305E6592A38B3DC00D2866E /* UIcolor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */; };
+		D305E6592A38B3DC00D2866E /* UIcolor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E6582A38B3DC00D2866E /* UIcolor+Extension.swift */; };
 		D305E65B2A38FCD500D2866E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E65A2A38FCD500D2866E /* ProfileViewController.swift */; };
 		D305E65D2A38FDB400D2866E /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */; };
 		D305E65F2A39CF0400D2866E /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305E65E2A39CF0400D2866E /* PasswordViewController.swift */; };
@@ -19,17 +19,18 @@
 		D3806C9E2A38A4CA00E2ACE8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */; };
 		D3C37C0F2A4082CF002BFC24 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C0E2A4082CF002BFC24 /* Service.swift */; };
 		D3C37C142A4087FD002BFC24 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C132A4087FD002BFC24 /* Register.swift */; };
-		D3C37C182A40CA1D002BFC24 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C172A40CA1D002BFC24 /* RegistrationViewModel.swift */; };
 		D3C37C1A2A40EDBF002BFC24 /* LoginViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C192A40EDBF002BFC24 /* LoginViewModel .swift */; };
 		D3C37C1C2A40EDF7002BFC24 /* Login .swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C1B2A40EDF7002BFC24 /* Login .swift */; };
 		D3C37C1E2A447B99002BFC24 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */; };
+		D3C37C262A4645C1002BFC24 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C252A4645C1002BFC24 /* PasswordViewModel.swift */; };
+		D3C37C282A464C10002BFC24 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C272A464C10002BFC24 /* NSObject+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E32061602E96B28E924E407 /* Pods_Neobis_iOS_Marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neobis_iOS_Marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		791CA7F3558C498704C07CD4 /* Pods-Neobis_iOS_Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		A1163CEB58C6446866F4F1A0 /* Pods-Neobis_iOS_Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_Marketplace.release.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_Marketplace/Pods-Neobis_iOS_Marketplace.release.xcconfig"; sourceTree = "<group>"; };
-		D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extensions.swift"; sourceTree = "<group>"; };
+		D305E6582A38B3DC00D2866E /* UIcolor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+Extension.swift"; sourceTree = "<group>"; };
 		D305E65A2A38FCD500D2866E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		D305E65E2A39CF0400D2866E /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
@@ -42,10 +43,11 @@
 		D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D3C37C0E2A4082CF002BFC24 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D3C37C132A4087FD002BFC24 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		D3C37C172A40CA1D002BFC24 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		D3C37C192A40EDBF002BFC24 /* LoginViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewModel .swift"; sourceTree = "<group>"; };
 		D3C37C1B2A40EDF7002BFC24 /* Login .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login .swift"; sourceTree = "<group>"; };
 		D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
+		D3C37C252A4645C1002BFC24 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
+		D3C37C272A464C10002BFC24 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 		D305E6572A38B39A00D2866E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D305E6582A38B3DC00D2866E /* UIcolor+Extensions.swift */,
+				D305E6582A38B3DC00D2866E /* UIcolor+Extension.swift */,
+				D3C37C272A464C10002BFC24 /* NSObject+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -108,8 +111,7 @@
 			children = (
 				D3C37C102A40860A002BFC24 /* Service */,
 				D3806C952A387A3A00E2ACE8 /* Models */,
-				D3806C962A387A4300E2ACE8 /* Views */,
-				D3806C972A387A4F00E2ACE8 /* ViewModels */,
+				D3C37C1F2A4643FC002BFC24 /* UI */,
 				D305E6572A38B39A00D2866E /* Extensions */,
 				D3806C812A373F8C00E2ACE8 /* AppDelegate.swift */,
 				D3806C832A373F8C00E2ACE8 /* SceneDelegate.swift */,
@@ -129,33 +131,66 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D3806C962A387A4300E2ACE8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */,
-				D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */,
-				D305E65E2A39CF0400D2866E /* PasswordViewController.swift */,
-				D305E65A2A38FCD500D2866E /* ProfileViewController.swift */,
-				D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D3806C972A387A4F00E2ACE8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				D3C37C172A40CA1D002BFC24 /* RegistrationViewModel.swift */,
-				D3C37C192A40EDBF002BFC24 /* LoginViewModel .swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		D3C37C102A40860A002BFC24 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				D3C37C0E2A4082CF002BFC24 /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D3C37C1F2A4643FC002BFC24 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C202A46441D002BFC24 /* LoginScreen */,
+				D3C37C212A46444D002BFC24 /* RegistrationScreen  */,
+				D3C37C232A4644A6002BFC24 /* PasswordScreen  */,
+				D3C37C222A46446E002BFC24 /* ProfileScreen */,
+				D3C37C242A4644F6002BFC24 /* ProfileDetailScreen  */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D3C37C202A46441D002BFC24 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D3806C9D2A38A4CA00E2ACE8 /* LoginViewController.swift */,
+				D3C37C192A40EDBF002BFC24 /* LoginViewModel .swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		D3C37C212A46444D002BFC24 /* RegistrationScreen  */ = {
+			isa = PBXGroup;
+			children = (
+				D305E65C2A38FDB400D2866E /* RegistrationViewController.swift */,
+			);
+			path = "RegistrationScreen ";
+			sourceTree = "<group>";
+		};
+		D3C37C222A46446E002BFC24 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D305E65A2A38FCD500D2866E /* ProfileViewController.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		D3C37C232A4644A6002BFC24 /* PasswordScreen  */ = {
+			isa = PBXGroup;
+			children = (
+				D305E65E2A39CF0400D2866E /* PasswordViewController.swift */,
+				D3C37C252A4645C1002BFC24 /* PasswordViewModel.swift */,
+			);
+			path = "PasswordScreen ";
+			sourceTree = "<group>";
+		};
+		D3C37C242A4644F6002BFC24 /* ProfileDetailScreen  */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */,
+			);
+			path = "ProfileDetailScreen ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C37C1C2A40EDF7002BFC24 /* Login .swift in Sources */,
+				D3C37C262A4645C1002BFC24 /* PasswordViewModel.swift in Sources */,
 				D3C37C1A2A40EDBF002BFC24 /* LoginViewModel .swift in Sources */,
 				D305E65D2A38FDB400D2866E /* RegistrationViewController.swift in Sources */,
 				D3C37C0F2A4082CF002BFC24 /* Service.swift in Sources */,
@@ -280,11 +316,11 @@
 				D3806C9E2A38A4CA00E2ACE8 /* LoginViewController.swift in Sources */,
 				D3C37C142A4087FD002BFC24 /* Register.swift in Sources */,
 				D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */,
-				D3C37C182A40CA1D002BFC24 /* RegistrationViewModel.swift in Sources */,
 				D305E65F2A39CF0400D2866E /* PasswordViewController.swift in Sources */,
 				D305E65B2A38FCD500D2866E /* ProfileViewController.swift in Sources */,
 				D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */,
-				D305E6592A38B3DC00D2866E /* UIcolor+Extensions.swift in Sources */,
+				D305E6592A38B3DC00D2866E /* UIcolor+Extension.swift in Sources */,
+				D3C37C282A464C10002BFC24 /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

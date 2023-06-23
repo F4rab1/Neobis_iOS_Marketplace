@@ -85,17 +85,6 @@ class RegistrationViewController: UIViewController {
         return view
     }()
     
-    private var viewModel: RegistrationViewModelProtocol
-    
-    init(viewModel: RegistrationViewModelProtocol) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -150,8 +139,8 @@ class RegistrationViewController: UIViewController {
             }
         }
         
-        let registrationViewModel = RegistrationViewModel()
-        let vc = PasswordViewController(userViewModel: registrationViewModel)
+        let vm = PasswordViewModel()
+        let vc = PasswordViewController(viewModel: vm)
         vc.username = usernameTextField.text
         vc.email = emailTextField.text
         navigationController?.pushViewController(vc, animated: true)
@@ -160,32 +149,32 @@ class RegistrationViewController: UIViewController {
     
     func setupConstraints() {
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset((UIScreen.main.bounds.height / 812) * 112)
-            make.trailing.equalTo(view.snp.centerX).offset((UIScreen.main.bounds.width / 375) * 25)
+            make.top.equalToSuperview().offset(computedHeight(112))
+            make.trailing.equalTo(view.snp.centerX).offset(computedWidth(25))
             make.width.equalTo(80)
             make.height.equalTo(80)
         }
         
         logoTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 8)
+            make.top.equalTo(logoImageView.snp.bottom).offset(computedHeight(8))
             make.centerX.equalToSuperview()
         }
         
         usernameTextField.snp.makeConstraints { make in
-            make.top.equalTo(logoTitleLabel.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 68)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(logoTitleLabel.snp.bottom).offset(computedHeight(68))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(35)
         }
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalTo(usernameTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 50)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(computedHeight(50))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(35)
         }
         
         signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(emailTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 50)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(emailTextField.snp.bottom).offset(computedHeight(50))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(44)
         }
     }

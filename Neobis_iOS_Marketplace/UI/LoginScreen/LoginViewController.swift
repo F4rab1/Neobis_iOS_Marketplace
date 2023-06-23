@@ -157,8 +157,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func signUpPressed() {
-        let vm = RegistrationViewModel()
-        let vc = RegistrationViewController(viewModel: vm)
+        let vc = RegistrationViewController()
         navigationController?.pushViewController(vc, animated: true)
         print("Sign Up")
     }
@@ -170,38 +169,38 @@ class LoginViewController: UIViewController {
     
     func setupConstraints() {
         logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset((UIScreen.main.bounds.height / 812) * 60)
-            make.trailing.equalTo(view.snp.centerX).offset((UIScreen.main.bounds.width / 375) * 25)
+            make.top.equalToSuperview().offset(computedHeight(60))
+            make.trailing.equalTo(view.snp.centerX).offset(computedWidth(25))
             make.width.equalTo(80)
             make.height.equalTo(80)
         }
         
         logoTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 8)
+            make.top.equalTo(logoImageView.snp.bottom).offset(computedHeight(8))
             make.centerX.equalToSuperview()
         }
         
         usernameTextField.snp.makeConstraints { make in
-            make.top.equalTo(logoTitleLabel.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 120)
+            make.top.equalTo(logoTitleLabel.snp.bottom).offset(computedHeight(120))
             make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(35)
         }
         
         passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(usernameTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 50)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(computedHeight(50))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(35)
         }
         
         signInButton.snp.makeConstraints { make in
-            make.bottom.equalTo(signUpButton.snp.top).offset((UIScreen.main.bounds.height / 812) * -183)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.bottom.equalTo(signUpButton.snp.top).offset(computedHeight(-183))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(44)
         }
         
         signUpButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset((UIScreen.main.bounds.height / 812) * 44)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.bottom.equalToSuperview().inset(computedHeight(44))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(44)
         }
     }
@@ -247,12 +246,4 @@ extension UITextField: UITextFieldDelegate {
             placeholderLabel.alpha = 1
         }
     }
-}
-
-
-extension NSObject {
-    public func computedWidth(_ value: Float) -> Float {
-        Float((UIScreen.main.bounds.width / 375)) * value
-    }
-//    public func computedHeight(_ value: Float)
 }

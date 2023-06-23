@@ -13,16 +13,6 @@ class PasswordViewController: UIViewController {
     
     var username: String?
     var email: String?
-    var registrationViewModel: RegistrationViewModelProtocol!
-    
-    init(userViewModel: RegistrationViewModelProtocol) {
-        super.init(nibName: nil, bundle: nil)
-        self.registrationViewModel = userViewModel
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     private let minLengthLabel: UILabel = {
         let label = UILabel()
@@ -98,6 +88,17 @@ class PasswordViewController: UIViewController {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         return button
     }()
+    
+    private var viewModel: PasswordViewModelProtocol
+    
+    init(viewModel: PasswordViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,7 +158,7 @@ class PasswordViewController: UIViewController {
             minLengthLabel.isHidden = true
             notEqualLabel.isHidden = true
             
-            registrationViewModel.registerUser(username: username!,
+            viewModel.registerUser(username: username!,
                                                email: email!,
                                                password: passwordTextField.text!,
                                                confirmPassword: secondPasswordTextField.text!)
@@ -169,37 +170,37 @@ class PasswordViewController: UIViewController {
     
     func setupConstraints() {
         lockImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset((UIScreen.main.bounds.height / 812) * 105)
+            make.top.equalToSuperview().offset(computedHeight(105))
             make.centerX.equalToSuperview()
             make.width.equalTo(120)
             make.height.equalTo(120)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(lockImageView.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 8)
+            make.top.equalTo(lockImageView.snp.bottom).offset(computedHeight(8))
             make.centerX.equalToSuperview()
         }
         
         descryptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 8)
+            make.top.equalTo(titleLabel.snp.bottom).offset(computedHeight(8))
             make.centerX.equalToSuperview()
         }
         
         passwordTextField.snp.makeConstraints { make in
-            make.top.equalTo(descryptionLabel.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 28)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(descryptionLabel.snp.bottom).offset(computedHeight(28))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(34)
         }
         
         secondPasswordTextField.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 8)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(computedHeight(8))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(34)
         }
         
         signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(secondPasswordTextField.snp.bottom).offset((UIScreen.main.bounds.height / 812) * 40)
-            make.leading.trailing.equalToSuperview().inset((UIScreen.main.bounds.width / 375) * 20)
+            make.top.equalTo(secondPasswordTextField.snp.bottom).offset(computedHeight(40))
+            make.leading.trailing.equalToSuperview().inset(computedWidth(20))
             make.height.equalTo(44)
         }
         
