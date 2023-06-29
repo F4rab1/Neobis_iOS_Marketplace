@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupViews() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(hexString: "#F7F6F9")
     }
     
     @objc private func changeProfilePressed() {

@@ -24,6 +24,10 @@
 		D3C37C1E2A447B99002BFC24 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */; };
 		D3C37C262A4645C1002BFC24 /* PasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C252A4645C1002BFC24 /* PasswordViewModel.swift */; };
 		D3C37C282A464C10002BFC24 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C272A464C10002BFC24 /* NSObject+Extension.swift */; };
+		D3C37C2B2A4CA606002BFC24 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C2A2A4CA606002BFC24 /* CustomTabBarController.swift */; };
+		D3C37C2E2A4CB5F6002BFC24 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C2D2A4CB5F6002BFC24 /* HomeViewController.swift */; };
+		D3C37C322A4CB700002BFC24 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C312A4CB700002BFC24 /* WalletViewController.swift */; };
+		D3C37C342A4CB727002BFC24 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C37C332A4CB727002BFC24 /* ChatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		D3C37C252A4645C1002BFC24 /* PasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewModel.swift; sourceTree = "<group>"; };
 		D3C37C272A464C10002BFC24 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		D3C37C2A2A4CA606002BFC24 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		D3C37C2D2A4CB5F6002BFC24 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D3C37C312A4CB700002BFC24 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		D3C37C332A4CB727002BFC24 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +153,12 @@
 				D3C37C202A46441D002BFC24 /* LoginScreen */,
 				D3C37C212A46444D002BFC24 /* RegistrationScreen  */,
 				D3C37C232A4644A6002BFC24 /* PasswordScreen  */,
+				D3C37C2C2A4CB5D9002BFC24 /* HomeScreen */,
+				D3C37C2F2A4CB6B9002BFC24 /* WalletScreen  */,
+				D3C37C302A4CB6C6002BFC24 /* ChatsScreen  */,
 				D3C37C222A46446E002BFC24 /* ProfileScreen */,
 				D3C37C242A4644F6002BFC24 /* ProfileDetailScreen  */,
+				D3C37C292A4CA59C002BFC24 /* TabBar */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -191,6 +203,38 @@
 				D3C37C1D2A447B99002BFC24 /* ProfileDetailViewController.swift */,
 			);
 			path = "ProfileDetailScreen ";
+			sourceTree = "<group>";
+		};
+		D3C37C292A4CA59C002BFC24 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C2A2A4CA606002BFC24 /* CustomTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D3C37C2C2A4CB5D9002BFC24 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C2D2A4CB5F6002BFC24 /* HomeViewController.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		D3C37C2F2A4CB6B9002BFC24 /* WalletScreen  */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C312A4CB700002BFC24 /* WalletViewController.swift */,
+			);
+			path = "WalletScreen ";
+			sourceTree = "<group>";
+		};
+		D3C37C302A4CB6C6002BFC24 /* ChatsScreen  */ = {
+			isa = PBXGroup;
+			children = (
+				D3C37C332A4CB727002BFC24 /* ChatsViewController.swift */,
+			);
+			path = "ChatsScreen ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +353,7 @@
 			files = (
 				D3C37C1C2A40EDF7002BFC24 /* Login .swift in Sources */,
 				D3C37C262A4645C1002BFC24 /* PasswordViewModel.swift in Sources */,
+				D3C37C2B2A4CA606002BFC24 /* CustomTabBarController.swift in Sources */,
 				D3C37C1A2A40EDBF002BFC24 /* LoginViewModel .swift in Sources */,
 				D305E65D2A38FDB400D2866E /* RegistrationViewController.swift in Sources */,
 				D3C37C0F2A4082CF002BFC24 /* Service.swift in Sources */,
@@ -317,9 +362,12 @@
 				D3C37C142A4087FD002BFC24 /* Register.swift in Sources */,
 				D3806C822A373F8C00E2ACE8 /* AppDelegate.swift in Sources */,
 				D305E65F2A39CF0400D2866E /* PasswordViewController.swift in Sources */,
+				D3C37C2E2A4CB5F6002BFC24 /* HomeViewController.swift in Sources */,
 				D305E65B2A38FCD500D2866E /* ProfileViewController.swift in Sources */,
+				D3C37C322A4CB700002BFC24 /* WalletViewController.swift in Sources */,
 				D3806C842A373F8C00E2ACE8 /* SceneDelegate.swift in Sources */,
 				D305E6592A38B3DC00D2866E /* UIcolor+Extension.swift in Sources */,
+				D3C37C342A4CB727002BFC24 /* ChatsViewController.swift in Sources */,
 				D3C37C282A464C10002BFC24 /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -162,8 +162,8 @@ class PasswordViewController: UIViewController {
                                                email: email!,
                                                password: passwordTextField.text!,
                                                confirmPassword: secondPasswordTextField.text!)
-            let vc = ProfileViewController()
-            navigationController?.pushViewController(vc, animated: true)
+            let tabBarVC = CustomTabBarController()
+            navigationController?.pushViewController(tabBarVC, animated: true)
             print("Sign Up > Next")
         }
     }
